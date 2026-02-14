@@ -1,6 +1,6 @@
 {
-    "name" : "",
-    "appid" : "",
+    "name" : "demo",
+    "appid" : "__UNI__08C311F",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -18,12 +18,14 @@
         },
         /* 模块配置 */
         "modules" : {
+            "Statistic" : {},
             "Push" : {}
         },
         /* 应用发布信息 */
         "distribute" : {
             /* android打包配置 */
             "android" : {
+                "packagename" : "uni.app.UNI08C311F",
                 "permissions" : [
                     "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
                     "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
@@ -42,7 +44,8 @@
                     "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
                     "<uses-permission android:name=\"android.permission.POST_NOTIFICATIONS\"/>",
                     "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>"
-                ]
+                ],
+                "abiFilters" : [ "arm64-v8a" ]
             },
             /* ios打包配置 */
             "ios" : {
@@ -51,10 +54,139 @@
                         "aps-environment" : "development"
                     }
                 },
-                "UIBackgroundModes" : ["remote-notification"]
+                "UIBackgroundModes" : [ "remote-notification" ],
+                "dSYMs" : false
             },
             /* SDK配置 */
-            "sdkConfigs" : {}
+            "sdkConfigs" : {
+                "payment" : {},
+                "statics" : {
+                    "umeng" : {
+                        "appkey_ios" : "",
+                        "channelid_ios" : "ios",
+                        "appkey_android" : "698fdc7cefe47a1fd84ed60e",
+                        "channelid_android" : "android"
+                    }
+                },
+                "push" : {}
+            }
+        },
+        "uniStatistics" : {
+            "enable" : false
+        },
+        "statistics" : {
+            "umeng" : {
+                "appkey_android" : "698fdc7cefe47a1fd84ed60e",
+                "appkey_ios" : "",
+                "channel" : "default"
+            }
+        },
+        "nativePlugins" : {
+            "spx-umpush" : {
+                "honor_app_id" : "",
+                "huawei_app_id" : "",
+                "meizu_app_id" : "",
+                "meizu_app_key" : "",
+                "oppo_app_key" : "",
+                "oppo_master_secret" : "",
+                "um_appkey_android" : "698fdc7cefe47a1fd84ed60e",
+                "um_appkey_ios" : "",
+                "um_log_flag_android" : "true",
+                "um_track_android" : "true",
+                "umeng_message_secret" : "a92180b4f7cb293a20935e771b4b25a4",
+                "vivo_app_id" : "",
+                "vivo_app_key" : "",
+                "xiaomi_app_id" : "",
+                "xiaomi_app_key" : "",
+                "__plugin_info__" : {
+                    "name" : "友盟消息推送 - [试用版，仅用于自定义调试基座]",
+                    "description" : "友盟消息推送原生插件",
+                    "platforms" : "Android,iOS",
+                    "url" : "https://ext.dcloud.net.cn/plugin?id=16800",
+                    "android_package_name" : "",
+                    "ios_bundle_id" : "",
+                    "isCloud" : true,
+                    "bought" : 0,
+                    "pid" : "16800",
+                    "parameters" : {
+                        "honor_app_id" : {
+                            "des" : "荣耀通道，AppID，从荣耀开放平台获取：https://developer.hihonor.com/cn",
+                            "key" : "com.hihonor.push.app_id",
+                            "value" : ""
+                        },
+                        "huawei_app_id" : {
+                            "des" : "华为通道，AppID，格式：appid=1234，从华为开发者联盟获取：https://developer.huawei.com",
+                            "key" : "com.huawei.hms.client.appid",
+                            "value" : ""
+                        },
+                        "meizu_app_id" : {
+                            "des" : "魅族通道，AppID，格式：appid=1234，从魅族开放平台获取：https://open.flyme.cn/open-web/views/push.html",
+                            "key" : "UM_MEIZU_APP_ID",
+                            "value" : ""
+                        },
+                        "meizu_app_key" : {
+                            "des" : "魅族通道，AppKey，格式：appkey=1234，从魅族开放平台获取：https://open.flyme.cn/open-web/views/push.html",
+                            "key" : "UM_MEIZU_APP_KEY",
+                            "value" : ""
+                        },
+                        "oppo_app_key" : {
+                            "des" : "OPPO通道，AppKey，从OPPO开放平台获取：https://open.oppomobile.com/newservice/capability?pagename=push",
+                            "key" : "UM_OPPO_APP_KEY",
+                            "value" : ""
+                        },
+                        "oppo_master_secret" : {
+                            "des" : "OPPO通道，App Master Secret，从OPPO开放平台获取：https://open.oppomobile.com/newservice/capability?pagename=push",
+                            "key" : "UM_OPPO_MASTER_SECRET",
+                            "value" : ""
+                        },
+                        "um_appkey_android" : {
+                            "des" : "友盟Android AppKey",
+                            "key" : "UMENG_PUSH_APPKEY",
+                            "value" : ""
+                        },
+                        "um_appkey_ios" : {
+                            "des" : "友盟ios appkey",
+                            "key" : "UMENG_APPKEY",
+                            "value" : ""
+                        },
+                        "um_log_flag_android" : {
+                            "des" : "是否开启日志打印,默认为不打印false,如果在测试阶段，先要分析异常问题可设置为true，可以抓取日志分析错误。生产模式请务必关闭设置为false或者不设置",
+                            "key" : "UM_LOG_FLAG",
+                            "value" : ""
+                        },
+                        "um_track_android" : {
+                            "des" : "友盟消息统计接口，可选值为:true打开,false关闭,参考：https://developer.umeng.com/docs/67966/detail/98583#h2--10",
+                            "key" : "UM_PUSH_TRACK",
+                            "value" : ""
+                        },
+                        "umeng_message_secret" : {
+                            "des" : "友盟Message Secret",
+                            "key" : "UMENG_MESSAGE_SECRET",
+                            "value" : ""
+                        },
+                        "vivo_app_id" : {
+                            "des" : "VIVO通道，AppID，从VIVO开放平台获取：https://vpush.vivo.com.cn",
+                            "key" : "com.vivo.push.app_id",
+                            "value" : ""
+                        },
+                        "vivo_app_key" : {
+                            "des" : "VIVO通道，AppKey，从VIVO开放平台获取：https://vpush.vivo.com.cn",
+                            "key" : "com.vivo.push.api_key",
+                            "value" : ""
+                        },
+                        "xiaomi_app_id" : {
+                            "des" : "小米通道，AppID，格式：appid=1234，从小米开放平台获取：https://dev.mi.com/console",
+                            "key" : "UM_XIAOMI_APP_ID",
+                            "value" : ""
+                        },
+                        "xiaomi_app_key" : {
+                            "des" : "小米通道，AppKey，格式：appkey=1234，从小米开放平台获取：https://dev.mi.com/console",
+                            "key" : "UM_XIAOMI_APP_KEY",
+                            "value" : ""
+                        }
+                    }
+                }
+            }
         }
     },
     /* 快应用特有相关 */
@@ -65,19 +197,85 @@
         "setting" : {
             "urlCheck" : false
         },
-        "usingComponents" : true
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : false
+        }
     },
     "mp-alipay" : {
-        "usingComponents" : true
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : false
+        }
     },
     "mp-baidu" : {
-        "usingComponents" : true
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : false
+        }
     },
     "mp-toutiao" : {
-        "usingComponents" : true
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : false
+        }
     },
-    "uniStatistics": {  
-        "enable": false
+    "uniStatistics" : {
+        "enable" : false,
+        "version" : "2"
     },
-    "vueVersion" : "3"
+    "vueVersion" : "3",
+    "app-harmony" : {
+        "distribute" : {
+            "bundleName" : "uni.app.UNI08C311F"
+        },
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "h5" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "mp-harmony" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "mp-jd" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "mp-kuaishou" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "mp-lark" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "mp-qq" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "mp-xhs" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "quickapp-webview-huawei" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "quickapp-webview-union" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    }
 }
